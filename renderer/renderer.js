@@ -1,6 +1,9 @@
-const myButton = document.getElementById("test-btn");
+const func = async () => {
+  const response = await window.versions.ping()
+  console.log(response)
+}
 
-myButton.addEventListener("click", () => {
-  console.log("View Script > submit Click");
-  window.Bridge.sendSubmit(lead);
-})
+const versionInfo = document.getElementById("info");
+versionInfo.textContent = `This app is using chrome ${versions.chrome()}`;
+
+func();
