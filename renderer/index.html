@@ -8,8 +8,56 @@
   </head>
   <body>
     <h1>Day-C</h1>
-    <button id="test-btn" type="button">This is a test button</button>
-    <h4 id="info">Info Here</h4>
+    <button id="fakebtn"type="button">This is a practice button</button>
+    <input type="text" id="fakeinput">
+    <div class="events-container">
+      <h2>Days Since...</h2>
+      <button class="add-event-btn" id="ds-add-btn" type="button">+</button>
+      <ol class="events-list" id"ds-list"></ol>
+    </div>
+
+    <dialog class="new-event-popup" id="new-ds-popup">
+      <h2>New Days Since Event</h2>
+      <ul>
+        <li><input id="dsnameinput" type="text" placerholder="Event Name"></li>
+        <li><input id="dsdateinput" type="date" placerholder="Date"></li>
+        <li><input id="dsnotesinput" type="text" placerholder="Notes"></li>
+      </ul>
+      <button id="dssubmit" type="button">Submit</button>
+    </dialog>
+
+    <div class="events-container">
+      <h2>Days Since...</h2>
+      <button class="add-event-btn" id="du-add-btn" type="button">+</button>
+      <ol class="events-list" id"du-list"></ol>
+    </div>
+
+    <dialog class="new-event-popup" id="new-du-popup">
+      <h2>New Days Until Event</h2>
+      <ul>
+        <li><input id="dunameinput" type="text" placerholder="Event Name"></li>
+        <li><input id="dudateinput" type="date" placerholder="Date"></li>
+        <li><input id="dunotesinput" type="text" placerholder="Notes"></li>
+      </ul>
+      <button id="dusubmit" type="button">Submit</button>
+    </dialog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </body>
   <script src="renderer.js"></script>
 </html>
