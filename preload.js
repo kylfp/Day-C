@@ -17,7 +17,7 @@ const { contextBridge,ipcMain, ipcRenderer } = require("electron");
 // contextBridge.exposeInMainWorld("Bridge", indexBridge);
 
 
-// Sending New Event
+// Events
 let sendEvent = (eventInfo) => {
   console.log("eventInfo -> preload.js")
   ipcRenderer.send("addEvent", eventInfo);
@@ -28,3 +28,19 @@ let eventInfoBridge = {
 }
 
 contextBridge.exposeInMainWorld("eventBridge", eventInfoBridge);
+
+// Settings
+contextBridge.exposeInMainWorld('electronAPI', {
+  openDirectory: () => ipcRenderer.invoke('dialog:openDirectory')
+})
+
+let sendSettings = (settings)  => {
+  console.log("settings --> preload.js");
+  ipcRenderer.send("settings", settings);
+}
+
+let settingsBridge = {
+  sendSettings: sendSettings
+}
+
+contextBridge.exposeInMainWorld("settingsBridge", settingsBridge);
